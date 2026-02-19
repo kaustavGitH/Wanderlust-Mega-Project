@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: backend
-          image: kaustavsdet/wanderlust-backend-beta:v2
+          image: kaustavsdet/wanderlust-backend-beta:v2.1
           ports:
             - containerPort: 8080
 ---
@@ -28,10 +28,11 @@ metadata:
   name: backend-service
   namespace: wanderlust
 spec:
-  type: LoadBalancer
+  type: NodePort
   selector:
     app: backend
   ports:
     - port: 8080
       targetPort: 8080
       protocol: TCP
+      nodePort: 31100
