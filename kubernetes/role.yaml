@@ -12,6 +12,7 @@ rules:
         - extensions
         - policy
         - rbac.authorization.k8s.io
+        - networking.k8s.io/v1
     resources:
       - pods
       - secrets
@@ -22,7 +23,7 @@ rules:
       - events
       - endpoints
       - horizontalpodautoscalers
-      - ingress
+      - ingresses
       - jobs
       - limitranges
       - namespaces
